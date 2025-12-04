@@ -33,24 +33,6 @@ EC2 Instances (Private Subnets, Multi-AZ, Auto Scaling)
 NAT Gateway → Internet Gateway → Internet
 ```
 
-## Deployment Instructions
-
-1. **Access website**: Use the ALB DNS name from Terraform output:
-   ```bash
-   terraform output website_url
-   ```
-
-2. **Verify HA**: Refresh the page multiple times - the Instance ID and AZ should change as ALB distributes traffic.
-
-3. **Take screenshots** of:
-   - ALB configuration and listener rules
-   - Target Group with registered targets and health status
-   - Auto Scaling Group showing instance count and AZs
-   - EC2 instances launched by ASG in different AZs
-   - Website in browser showing instance metadata
-
-4. **Add screenshots below**
-
 ## AWS Screenshots
 
 ### Application Load Balancer
@@ -68,12 +50,3 @@ NAT Gateway → Internet Gateway → Internet
 ### Website showing Multi-AZ deployment
 ![Website Screenshot](screenshots/website_ha.png)
 
-## Testing High Availability
-
-1. **Load Distribution**: Refresh the website multiple times - notice different Instance IDs and AZs
-2. **Health Checks**: Stop an instance manually - ASG will launch a new one within minutes
-3. **Scaling Test**: Generate CPU load using stress test - watch ASG scale up
-   ```bash
-   # SSH to instance (via Session Manager) and run:
-   stress --cpu 2 --timeout 600s
-   ```

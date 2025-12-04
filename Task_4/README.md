@@ -47,8 +47,8 @@ Free Tier usage alerts cannot be configured via Terraform. Enable them manually:
 1. Go to **AWS Billing Dashboard**
 2. Navigate to **Billing Preferences** (left sidebar)
 3. Enable these options:
-   - ✅ **Receive Free Tier Usage Alerts**
-   - ✅ **Receive Billing Alerts**
+   - **Receive Free Tier Usage Alerts**
+   - **Receive Billing Alerts**
 4. Enter your email address
 5. Click **"Save preferences"**
 
@@ -76,22 +76,3 @@ Add screenshots below.
 ### Billing Dashboard
 ![Billing Dashboard Screenshot](screenshots/billing_dashboard.png)
 
-## Testing the Alarm
-
-To verify the alarm is working:
-
-1. **Check Alarm State**: Go to CloudWatch → Alarms. The alarm should be in "OK" state if charges are below threshold.
-2. **Simulate Alert** (optional): You cannot manually trigger a billing alarm, but you can check CloudWatch metrics:
-   - Go to CloudWatch → Metrics → Billing
-   - View `EstimatedCharges` metric
-3. **SNS Confirmation**: Ensure your email subscription shows "Confirmed" status in SNS console.
-
-## Best Practices for Cost Control
-
-1. **Stop, Don't Just Pause**: Always stop or terminate instances when not in use.
-2. **Use Free Tier Wisely**: Monitor usage at https://console.aws.amazon.com/billing/home#/freetier
-3. **Set Multiple Alarms**: Create alarms at different thresholds (₹50, ₹100, ₹200) for early warnings.
-4. **Tag Resources**: Use consistent tags to track which resources belong to which projects.
-5. **AWS Budgets**: Consider using AWS Budgets for more advanced cost management.
-6. **Delete Unused Resources**: Regularly audit and delete EBS volumes, snapshots, and Elastic IPs.
-7. **Use Cost Explorer**: Analyze spending patterns in AWS Cost Explorer.

@@ -22,14 +22,6 @@ This task deploys a static resume website on an EC2 instance using Nginx with in
 - **SSH IP Restriction**: Limit SSH access to known IPs
 - **Detailed Monitoring**: Enhanced CloudWatch metrics
 
-
-1. **Take screenshots** of:
-   - EC2 instance dashboard
-   - Security Groups configuration
-   - Website in browser showing your resume
-
-2. **Add screenshots below**
-
 ## AWS Screenshots
 
 ### EC2 Instance
@@ -41,7 +33,4 @@ This task deploys a static resume website on an EC2 instance using Nginx with in
 ### Website in Browser
 ![Website Screenshot](screenshots/website.png)
 
-## Customization
-
-To customize the resume content, edit the HTML in the `user_data` section of `main.tf` before deployment, or SSH into the instance and edit `/usr/share/nginx/html/index.html`.
 

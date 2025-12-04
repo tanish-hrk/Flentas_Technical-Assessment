@@ -10,39 +10,6 @@ This task implements a foundational AWS network architecture using Terraform. Th
 4. **Internet Gateway**: Attached to VPC to enable public subnet internet connectivity.
 5. **NAT Gateway**: Deployed in the first public subnet to allow private subnet resources to access the internet for updates while remaining protected from inbound traffic.
 
-## CIDR Range Explanation
-
-- **VPC CIDR**: `10.0.0.0/16` - Provides a large address space (65,536 IPs) for future growth
-- **Public Subnet 1**: `10.0.1.0/24` - 256 IPs in AZ 1
-- **Public Subnet 2**: `10.0.2.0/24` - 256 IPs in AZ 2
-- **Private Subnet 1**: `10.0.11.0/24` - 256 IPs in AZ 1
-- **Private Subnet 2**: `10.0.12.0/24` - 256 IPs in AZ 2
-
-The `/24` subnets provide sufficient capacity for typical use cases while leaving room for additional subnets. The spacing (1.x for public, 11.x for private) allows easy identification and future expansion.
-
-## Deployment Instructions
-
-
-2. **Initialize Terraform**:
-   ```bash
-   terraform init
-   ```
-3. **Review the plan**:
-   ```bash
-   terraform plan
-   ```
-4. **Apply the configuration**:
-   ```bash
-   terraform apply
-   ```
-5. **Take screenshots** of:
-   - VPC dashboard
-   - Subnets list
-   - Route tables
-   - NAT Gateway and Internet Gateway
-
-6. **Add screenshots below** (after taking them in AWS Console)
-
 ## AWS Screenshots
 
 ### VPC
