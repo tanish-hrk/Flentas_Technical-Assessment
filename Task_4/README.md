@@ -38,23 +38,7 @@ Before deploying Terraform, enable billing metrics in AWS Console:
 
 **Note**: Billing metric updates can take up to 24 hours to start appearing.
 
-### Step 2: Deploy Terraform Configuration
-
-1. **Update variables**: Edit `main.tf`:
-   - Change `resource_prefix` to `FirstName_Lastname`
-   - Change `alert_email` to your actual email address
-
-2. **Initialize Terraform**:
-   ```bash
-   terraform init
-   ```
-
-3. **Apply configuration**:
-   ```bash
-   terraform apply
-   ```
-
-4. **Confirm SNS subscription**: Check your email for a confirmation message from AWS SNS and click the confirmation link. Without this, you won't receive alerts.
+1. **Confirm SNS subscription**: Check your email for a confirmation message from AWS SNS and click the confirmation link. Without this, you won't receive alerts.
 
 ### Step 3: Enable Free Tier Usage Alerts (Manual)
 
@@ -111,14 +95,3 @@ To verify the alarm is working:
 5. **AWS Budgets**: Consider using AWS Budgets for more advanced cost management.
 6. **Delete Unused Resources**: Regularly audit and delete EBS volumes, snapshots, and Elastic IPs.
 7. **Use Cost Explorer**: Analyze spending patterns in AWS Cost Explorer.
-
-## Cleanup
-
-To delete the billing alarm:
-```bash
-terraform destroy
-```
-
-**Note**: This removes the CloudWatch alarm and SNS topic but doesn't affect your billing settings. Free Tier alerts remain enabled until you manually disable them in Billing Preferences.
-
-**Important**: Always delete all resources (EC2, ALB, NAT Gateway, etc.) after completing the assessment to avoid ongoing charges!

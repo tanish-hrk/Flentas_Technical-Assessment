@@ -24,28 +24,25 @@ This task deploys a static resume website on an EC2 instance using Nginx with in
 
 ## Deployment Instructions
 
-1. **Update variables**: Edit `main.tf`:
-   - Change `resource_prefix` to `FirstName_Lastname`
-   - Change `my_ip` to your public IP address (visit https://whatismyip.com)
 
-2. **Initialize Terraform**:
+1. **Initialize Terraform**:
    ```bash
    terraform init
    ```
 
-3. **Apply configuration**:
+2. **Apply configuration**:
    ```bash
    terraform apply
    ```
 
-4. **Access your website**: After deployment completes, Terraform will output the website URL. Open it in your browser.
+3. **Access your website**: After deployment completes, Terraform will output the website URL. Open it in your browser.
 
-5. **Take screenshots** of:
+4. **Take screenshots** of:
    - EC2 instance dashboard
    - Security Groups configuration
    - Website in browser showing your resume
 
-6. **Add screenshots below**
+5. **Add screenshots below**
 
 ## AWS Screenshots
 
@@ -62,11 +59,3 @@ This task deploys a static resume website on an EC2 instance using Nginx with in
 
 To customize the resume content, edit the HTML in the `user_data` section of `main.tf` before deployment, or SSH into the instance and edit `/usr/share/nginx/html/index.html`.
 
-## Cleanup
-
-To delete all resources:
-```bash
-terraform destroy
-```
-
-**Important**: Run `terraform destroy` after completing the assessment to avoid charges.

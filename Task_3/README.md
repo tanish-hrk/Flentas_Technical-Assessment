@@ -35,34 +35,21 @@ NAT Gateway → Internet Gateway → Internet
 
 ## Deployment Instructions
 
-1. **Update variables**: Edit `main.tf` and change `resource_prefix` to `FirstName_Lastname`
-
-2. **Initialize Terraform**:
-   ```bash
-   terraform init
-   ```
-
-3. **Apply configuration**:
-   ```bash
-   terraform apply
-   ```
-   This will take ~5-10 minutes due to ALB provisioning and instance launches.
-
-4. **Access website**: Use the ALB DNS name from Terraform output:
+1. **Access website**: Use the ALB DNS name from Terraform output:
    ```bash
    terraform output website_url
    ```
 
-5. **Verify HA**: Refresh the page multiple times - the Instance ID and AZ should change as ALB distributes traffic.
+2. **Verify HA**: Refresh the page multiple times - the Instance ID and AZ should change as ALB distributes traffic.
 
-6. **Take screenshots** of:
+3. **Take screenshots** of:
    - ALB configuration and listener rules
    - Target Group with registered targets and health status
    - Auto Scaling Group showing instance count and AZs
    - EC2 instances launched by ASG in different AZs
    - Website in browser showing instance metadata
 
-7. **Add screenshots below**
+4. **Add screenshots below**
 
 ## AWS Screenshots
 
@@ -90,12 +77,3 @@ NAT Gateway → Internet Gateway → Internet
    # SSH to instance (via Session Manager) and run:
    stress --cpu 2 --timeout 600s
    ```
-
-## Cleanup
-
-To delete all resources:
-```bash
-terraform destroy
-```
-
-**Important**: This will terminate all instances and delete the ALB. Run after completing the assessment to avoid charges.
