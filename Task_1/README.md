@@ -22,7 +22,7 @@ The `/24` subnets provide sufficient capacity for typical use cases while leavin
 
 ## Deployment Instructions
 
-1. **Update the prefix**: Edit `main.tf` and change `resource_prefix` variable to `FirstName_Lastname`
+
 2. **Initialize Terraform**:
    ```bash
    terraform init
@@ -57,11 +57,3 @@ The `/24` subnets provide sufficient capacity for typical use cases while leavin
 ### NAT Gateway & Internet Gateway
 ![NAT and IGW Screenshot](screenshots/nat_igw.png)
 
-## Cleanup
-
-To delete all resources:
-```bash
-terraform destroy
-```
-
-**Important**: Ensure you run `terraform destroy` after completing the assessment to avoid charges.
