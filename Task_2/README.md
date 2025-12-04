@@ -22,27 +22,13 @@ This task deploys a static resume website on an EC2 instance using Nginx with in
 - **SSH IP Restriction**: Limit SSH access to known IPs
 - **Detailed Monitoring**: Enhanced CloudWatch metrics
 
-## Deployment Instructions
 
-
-1. **Initialize Terraform**:
-   ```bash
-   terraform init
-   ```
-
-2. **Apply configuration**:
-   ```bash
-   terraform apply
-   ```
-
-3. **Access your website**: After deployment completes, Terraform will output the website URL. Open it in your browser.
-
-4. **Take screenshots** of:
+1. **Take screenshots** of:
    - EC2 instance dashboard
    - Security Groups configuration
    - Website in browser showing your resume
 
-5. **Add screenshots below**
+2. **Add screenshots below**
 
 ## AWS Screenshots
 
